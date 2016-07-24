@@ -9,22 +9,16 @@
 
 <body>
 
-  <div>
+
     <form>
-      <div id="keypress-input">
-        <input id="user-temp">Enter Temp
-        <input id="celius" type="radio">Celsius
-        <input id="fahrenheit" type="radio">Fahrenheit
-      </div>
-      <div id="output-target">
-        <input id="converted" type="text">Converted Temp
-      </div>
-      <div>
-        <button id="convert-btn">convert temp</button>
-        <button id="clear-btn">clear fields</button>
-      </div>
+        <label for="temperature">Enter Temp</label>
+        <input type="text" name="temperature" id="inputZ">
+        <input type="radio" name="temperature-format" value="celsius">&#8451
+        <input type="radio" name="temperature-format" value="fahrenheit">&#8457
+      <button id="submit" type="submit">convert temp</button>
+      <button id="clear" name="clear">clear fields</button>
     </form>
-  </div>
+    <div id="output"></div>
 
 
 

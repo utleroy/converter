@@ -9,13 +9,23 @@
 // If the temperature is greater than 90F/32C the color of the converted temperature should be red.
 // If the temperature is less than 32F/0C the color of the converted temperature should be blue.
 // For any other temperature, the color should be green.
+var input = document.getElementById("input")
+var output = document.getElementById("output")
+var button = document.getElementById("submit")
+
+button.addEventListener("click", determineConverter);
+
+function determineConverter (clickEvent) {
+  document.getElementById("output").innerHTML
+  console.log("event", clickEvent);
+}
+
+
 function toCelsius () {
-  var userText = document.getElementById("input").value;
+  var userText = input.value;
   var converted = ((userText-32) / 1.8);
   var unit = "&#8451";
-  DOMconverted(converted, unit);
 }
-console.log()
 
 function toFahrenheit () {
   var userText = document.getElementById("input").value;
@@ -28,12 +38,8 @@ function toFahrenheit () {
 
 // // This function should determine which conversion should
 // // happen based on which radio button is selected.
-// function determineConverter (clickEvent) {
-//   console.log("event", clickEvent);
-// }
 
 // // Assign a function to be executed when the button is clicked
-// button.addEventListener("click", determineConverter);
 
 
 

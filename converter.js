@@ -1,22 +1,27 @@
 var button = document.getElementById("submit")
+var output = document.getElementById("output");
+var input = document.getElementById("input");
+var radio = document.getElementsByName("tempUnit");
 
 button.addEventListener("click", displayUserData);
+button.addEventListener("checked", toCelsius)
 
 function displayUserData () {
-  var input = document.getElementById("input");
-  var output = document.getElementById("output");
   var display = input.value;
   output.value = "Your Temp is, " + display
+  toCelsius();
   console.log("user input", output.value);
 }
 
 
-// function toCelsius () {
-//   var userText = input.value;
-//   var converted = ((userText-32) / 1.8);
-//   var unit = "&#8451";
-//   console.log("cel", input)
-// }
+function toCelsius () {
+  var userText = input.value;
+  var converted = ((userText-32) / 1.8);
+  output.value = converted
+  var unit = "&#8451";
+  console.log("cel", output.value)
+}
+
 
 // function toFahrenheit () {
 //   var userText = document.getElementById("input").value;

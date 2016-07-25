@@ -1,3 +1,30 @@
+var button = document.getElementById("submit")
+
+button.addEventListener("click", displayUserData);
+
+function displayUserData () {
+  var input = document.getElementById("input");
+  var output = document.getElementById("output");
+  var display = input.value;
+  output.value = "Your Temp is, " + display
+  console.log("user input", output.value);
+}
+
+
+// function toCelsius () {
+//   var userText = input.value;
+//   var converted = ((userText-32) / 1.8);
+//   var unit = "&#8451";
+//   console.log("cel", input)
+// }
+
+// function toFahrenheit () {
+//   var userText = document.getElementById("input").value;
+//   var converted = ((userText-32) / 1.8);
+//   var unit = "&#8457";
+// }
+
+
 // Write a program that will convert a temperature from fahrenheit to celsius, or from celsius to fahrenheit.
 
 // In the HTML, have one input field where someone can enter in a temperature.
@@ -9,29 +36,6 @@
 // If the temperature is greater than 90F/32C the color of the converted temperature should be red.
 // If the temperature is less than 32F/0C the color of the converted temperature should be blue.
 // For any other temperature, the color should be green.
-var input = document.getElementById("input")
-var output = document.getElementById("output")
-var button = document.getElementById("submit")
-
-button.addEventListener("click", determineConverter);
-
-function determineConverter (clickEvent) {
-  document.getElementById("output").innerHTML
-  console.log("event", clickEvent);
-}
-
-
-function toCelsius () {
-  var userText = input.value;
-  var converted = ((userText-32) / 1.8);
-  var unit = "&#8451";
-}
-
-function toFahrenheit () {
-  var userText = document.getElementById("input").value;
-  var converted = ((userText-32) / 1.8);
-  var unit = "&#8457";
-}
 
 // // Get a reference to the button element in the DOM
 // var button = document.getElementById("submite");

@@ -8,18 +8,18 @@ button.addEventListener("checked", toCelsius)
 
 function displayUserData () {
   var display = input.value;
-  output.value = "Your Temp is, " + display
-  toCelsius();
+  output.value = display
   console.log("user input", output.value);
+  toCelsius();
 }
+
 
 
 function toCelsius () {
   var userText = input.value;
   var converted = ((userText-32) / 1.8);
-  output.value = converted
-  var unit = "&#8451";
-  console.log("cel", output.value)
+  output.value = converted + " degrees Celsius"
+  console.log(output.value)
 }
 
 

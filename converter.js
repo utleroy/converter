@@ -1,33 +1,39 @@
-var button = document.getElementById("submit")
+var button = document.getElementById("submit");
 var output = document.getElementById("output");
 var input = document.getElementById("input");
-var radio = document.getElementsByName("tempUnit");
+// var radioCelsius = document.getElementById("celsius");
+// var radioFahrenheit = document.getElementById("fahrenheit");
 
 button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius)
+button.addEventListener("checked", toFahrenheit)
 
 function displayUserData () {
-  var display = input.value;
-  output.value = "Your Temp is, " + display
-  toCelsius();
-  console.log("user input", output.value);
+  if (document.getElementById("celsius").checked) {
+    console.log("cel checked")
+} else if (document.getElementById("fahrenheit").checked) {
+  console.log("fah checked")
 }
-
+  var display = input.value;
+  output.value = display
+  console.log("user input", output.value);
+  toCelsius();
+}
 
 function toCelsius () {
   var userText = input.value;
   var converted = ((userText-32) / 1.8);
-  output.value = converted
-  var unit = "&#8451";
-  console.log("cel", output.value)
+  output.value = converted + " degrees Celsius"
+  console.log(output.value)
 }
 
 
-// function toFahrenheit () {
-//   var userText = document.getElementById("input").value;
-//   var converted = ((userText-32) / 1.8);
-//   var unit = "&#8457";
-// }
+function toFahrenheit () {
+  var userText = input.value;
+  var converted = ((userText * 1.8) + 32);
+  output.valur = converted + " degrees Fahrenheit"
+  // var unit = "&#8457";
+}
 
 
 // Write a program that will convert a temperature from fahrenheit to celsius, or from celsius to fahrenheit.
@@ -37,6 +43,8 @@ function toCelsius () {
 // Create a block level element that will hold the text of the converted temperature.
 // Create a button that, when clicked, displays the converted temperature.
 // Create another button that, when clicked, clears any text in the input field.
+
+
 // Add an event handler to the input field that checks if the user pressed the enter key, and if that happens, perform the conversion.
 // If the temperature is greater than 90F/32C the color of the converted temperature should be red.
 // If the temperature is less than 32F/0C the color of the converted temperature should be blue.

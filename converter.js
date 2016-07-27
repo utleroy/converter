@@ -1,8 +1,6 @@
 var button = document.getElementById("submit");
 var output = document.getElementById("output");
 var input = document.getElementById("input");
-// var radioCelsius = document.getElementById("celsius");
-// var radioFahrenheit = document.getElementById("fahrenheit");
 
 button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius)
@@ -10,29 +8,26 @@ button.addEventListener("checked", toFahrenheit)
 
 function displayUserData () {
   if (document.getElementById("celsius").checked) {
-    console.log("cel checked")
-} else if (document.getElementById("fahrenheit").checked) {
-  console.log("fah checked")
-}
-  var display = input.value;
-  output.value = display
-  console.log("user input", output.value);
-  toCelsius();
+    toCelsius();
+    console.log("celsius checked")
+  } else if(document.getElementById("fahrenheit").checked) {
+    toFahrenheit();
+    console.log("fahrenheit checked")
+  }
 }
 
 function toCelsius () {
-  var userText = input.value;
-  var converted = ((userText-32) / 1.8);
-  output.value = converted + " degrees Celsius"
+  var userTextC = input.value;
+  var convertedC = ((userTextC - 32) / 1.8);
+  output.value = convertedC + " degrees Celsius"
   console.log(output.value)
 }
 
 
 function toFahrenheit () {
-  var userText = input.value;
-  var converted = ((userText * 1.8) + 32);
-  output.valur = converted + " degrees Fahrenheit"
-  // var unit = "&#8457";
+  var userTextF = input.value;
+  var convertedF = ((userTextF * 1.8) + 32);
+  output.value = convertedF + " degrees Fahrenheit"
 }
 
 

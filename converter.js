@@ -2,6 +2,7 @@ var button = document.getElementById("submit");
 var output = document.getElementById("output");
 var input = document.getElementById("input");
 
+
 button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius)
 button.addEventListener("checked", toFahrenheit)
@@ -20,7 +21,13 @@ function toCelsius () {
   var userTextC = input.value;
   var convertedC = ((userTextC - 32) / 1.8);
   output.value = convertedC + " degrees Celsius"
-  console.log(output.value)
+  if (convertedC > 32) {
+    output.style.color = "red";
+  } else if (convertedC <= 0) {
+    output.style.color = "blue";
+  } else {
+    output.style.color = "green";
+  }
 }
 
 
@@ -28,15 +35,17 @@ function toFahrenheit () {
   var userTextF = input.value;
   var convertedF = ((userTextF * 1.8) + 32);
   output.value = convertedF + " degrees Fahrenheit"
+  if (convertedF > 90) {
+    output.style.color= "red";
+  } else if (convertedF <= 32) {
+    output.style.color = "blue";
+  } else {
+    output.style.color = "green";
+  }
 }
 
 
-// Write a program that will convert a temperature from fahrenheit to celsius, or from celsius to fahrenheit.
 
-// In the HTML, have one input field where someone can enter in a temperature.
-// Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
-// Create a block level element that will hold the text of the converted temperature.
-// Create a button that, when clicked, displays the converted temperature.
 // Create another button that, when clicked, clears any text in the input field.
 
 

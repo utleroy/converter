@@ -1,8 +1,7 @@
 var button = document.getElementById("submit");
 var output = document.getElementById("output");
 var input = document.getElementById("input");
-// var radioCelsius = document.getElementById("celsius");
-// var radioFahrenheit = document.getElementById("fahrenheit");
+
 
 button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius)
@@ -10,38 +9,43 @@ button.addEventListener("checked", toFahrenheit)
 
 function displayUserData () {
   if (document.getElementById("celsius").checked) {
-    console.log("cel checked")
-} else if (document.getElementById("fahrenheit").checked) {
-  console.log("fah checked")
-}
-  var display = input.value;
-  output.value = display
-  console.log("user input", output.value);
-  toCelsius();
+    toCelsius();
+    console.log("celsius checked")
+  } else if(document.getElementById("fahrenheit").checked) {
+    toFahrenheit();
+    console.log("fahrenheit checked")
+  }
 }
 
 function toCelsius () {
-  var userText = input.value;
-  var converted = ((userText-32) / 1.8);
-  output.value = converted + " degrees Celsius"
-  console.log(output.value)
+  var userTextC = input.value;
+  var convertedC = ((userTextC - 32) / 1.8);
+  output.value = convertedC + " degrees Celsius"
+  if (convertedC > 32) {
+    output.style.color = "red";
+  } else if (convertedC <= 0) {
+    output.style.color = "blue";
+  } else {
+    output.style.color = "green";
+  }
 }
 
 
 function toFahrenheit () {
-  var userText = input.value;
-  var converted = ((userText * 1.8) + 32);
-  output.valur = converted + " degrees Fahrenheit"
-  // var unit = "&#8457";
+  var userTextF = input.value;
+  var convertedF = ((userTextF * 1.8) + 32);
+  output.value = convertedF + " degrees Fahrenheit"
+  if (convertedF > 90) {
+    output.style.color= "red";
+  } else if (convertedF <= 32) {
+    output.style.color = "blue";
+  } else {
+    output.style.color = "green";
+  }
 }
 
 
-// Write a program that will convert a temperature from fahrenheit to celsius, or from celsius to fahrenheit.
 
-// In the HTML, have one input field where someone can enter in a temperature.
-// Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
-// Create a block level element that will hold the text of the converted temperature.
-// Create a button that, when clicked, displays the converted temperature.
 // Create another button that, when clicked, clears any text in the input field.
 
 

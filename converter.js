@@ -1,7 +1,7 @@
 var button = document.getElementById("submit");
 var output = document.getElementById("output");
 var input = document.getElementById("input");
-
+var clearBtn = document.getElementById("clear")
 
 button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius)
@@ -24,6 +24,14 @@ function enterKeyPressed (keyPress) {
         displayUserData();
   }
 }
+
+function clear () {
+  document.getElementById("input").value = "";
+  document.getElementById("output").innerHTML = "";
+  console.log("clear clicked")
+}
+
+clearBtn.addEventListener("click", clear);
 
 document.addEventListener("keydown", enterKeyPressed);
 

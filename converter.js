@@ -7,6 +7,7 @@ button.addEventListener("click", displayUserData);
 button.addEventListener("checked", toCelsius)
 button.addEventListener("checked", toFahrenheit)
 
+
 function displayUserData () {
   if (document.getElementById("celsius").checked) {
     toCelsius();
@@ -16,6 +17,15 @@ function displayUserData () {
     console.log("fahrenheit checked")
   }
 }
+
+
+function enterKeyPressed (keyPress) {
+    if (keyPress.which === 13) {
+        displayUserData();
+  }
+}
+
+document.addEventListener("keydown", enterKeyPressed);
 
 function toCelsius () {
   var userTextC = input.value;
@@ -50,17 +60,8 @@ function toFahrenheit () {
 
 
 // Add an event handler to the input field that checks if the user pressed the enter key, and if that happens, perform the conversion.
-// If the temperature is greater than 90F/32C the color of the converted temperature should be red.
-// If the temperature is less than 32F/0C the color of the converted temperature should be blue.
-// For any other temperature, the color should be green.
 
-// // Get a reference to the button element in the DOM
-// var button = document.getElementById("submite");
 
-// // This function should determine which conversion should
-// // happen based on which radio button is selected.
-
-// // Assign a function to be executed when the button is clicked
 
 
 
